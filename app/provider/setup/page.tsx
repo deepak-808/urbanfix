@@ -103,7 +103,7 @@ export default function ProviderSetupPage() {
   // ── Step handlers ─────────────────────────────────────────────────────
 
   // Validate step 1 and advance to step 2
-  const handleStep1 = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleStep1 = (e: { preventDefault(): void }) => {
     e.preventDefault();
     setError("");
     if (!categoryId) { setError("Please select a category."); return; }
@@ -111,7 +111,7 @@ export default function ProviderSetupPage() {
   };
 
   // Submit the full profile (step 2) to the API
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault();
     setError("");
 

@@ -27,7 +27,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
 
   // Submits credentials to the auth store; redirects to homepage on success
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: { preventDefault(): void }) => {
     e.preventDefault();
     setError("");
     setLoading(true);
